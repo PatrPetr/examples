@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html lang="de">
+<head>
+	<meta charset="utf-8">
+	<title>Radarfalle</title>
+	<link href="style-6-1.css" rel="stylesheet">
+
+  <script>
+    function geschwindigkeitsprüfung() {
+      var geschwindigkeit = parseInt(prompt("Na, wie schnell waren Sie denn?", ""));
+      var ergebnis = document.getElementById("ergebnis");
+
+      if (isNaN(geschwindigkeit)) {
+        ergebnis.innerHTML = "Ungültige Eingabe!";
+      } else if (geschwindigkeit <= 100) {
+        ergebnis.innerHTML = "Sie sind bei " + geschwindigkeit + " erwischt worden - kein Problem, Sie waren wohl zu Fuß untgerwegs.";
+      } else if (geschwindigkeit > 100 && geschwindigkeit <= 150) {
+        ergebnis.innerHTML = "Sie sind bei " + geschwindigkeit + " erwischt worden – Das kostet 100 Euronen.";
+      } else if (geschwindigkeit > 150 && geschwindigkeit <= 200) {
+        ergebnis.innerHTML = "Sie sind bei " + geschwindigkeit + " erwischt worden – Das wird teuer. Bestimmt 350 und 3 Monate Flugverbot.";
+      } else if (geschwindigkeit > 200 ) {
+        ergebnis.innerHTML = "Sie sind bei " + geschwindigkeit + " erwischt worden – Sie sind Ihren Führerschein los.";     
+    }
+}
+  </script>
+</head>
+<body>
+  <h1>Radarfalle auf der Milchstraße</h1>
+  <p>Sie wurden außerhalb des Hyperraums geblitzdingst, wir sagen Ihnen, wie teuer das wird:</p>
+  <p><a href="#" onclick="geschwindigkeitsprüfung()">Blitzchecker</a></p>
+  <p id="ergebnis"></p>
+</body>
+</html>

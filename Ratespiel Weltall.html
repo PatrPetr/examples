@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html lang="de">
+<head>
+	<meta charset="utf-8">
+	<title>Weltraumquiz</title>
+	<link href="style-6-1.css" rel="stylesheet">
+</head>
+<body>
+	<h1>3 X raten</h1>
+	<section class="fragebox">
+		<h3>Wer war als erste/r im All?:</h3>
+		<p id="raten"><a href="#" onclick="schreibwas()">Hier raten</a></p>
+		<p id="ergebnis"></p>
+	</section>
+
+<script>
+function schreibwas() {
+	var count = 1;
+	var antwort1 = "Laika";
+	var antwort2 = "Juri Gagarin";
+	
+	do {
+		eingabe = prompt(count + ". Versuch. Wie hieß der erste Erdbewohner im All:","");
+		if ( eingabe == antwort2 ) {
+			alert ("Fast richtig, Sie dürfen noch einmal raten");
+			continue;
+		}
+		else if ( eingabe == antwort1 ) {
+			document.getElementById("ergebnis").innerHTML = "Richtig";
+			break;
+		}
+		count++;
+	}
+	while (count <= 3 && eingabe != antwort1);
+
+	if ( eingabe != antwort1 ) {
+		document.getElementById("ergebnis").innerHTML = "3 × falsch";
+	}
+}
+</script>
+
+</body>
+</html>
